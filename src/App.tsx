@@ -56,17 +56,18 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-[#f8f6f6] font-display text-[#221610] antialiased selection:bg-[#ec5b13] selection:text-white">
-      {/* SplashCursor interactif */}
+      {/* SplashCursor interactif affiné (effet fluide discret et élégant) */}
       <SplashCursor
         rainbow
-        size={1.6}
-        force={0.8}
-        swirl={18}
-        trail={2.5}
+        size={0.45}
+        force={0.4}
+        swirl={12}
+        trail={1.2}
         clickSplash={false}
-        intensity={0.7}
-        shading={0.4}
+        intensity={0.35}
+        shading={0.2}
         contained
+        style={{ opacity: 0.65 }}
       />
 
       {/* Toast Notification */}
