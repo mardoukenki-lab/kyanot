@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var currentFetch = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() {
+              return currentFetch;
+            },
+            set: function(val) {
+              currentFetch = val;
+            }
+          });
+        } catch (e) {}
+
+        window.addEventListener('error', function(event) {
+          if (
+            (event.filename && (event.filename.indexOf('chrome-extension://') !== -1 || event.filename.indexOf('moz-extension://') !== -1)) ||
+            (event.message && event.message.indexOf('fetch of #<Window>') !== -1)
+          ) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        }, true);
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Étude de Me KOFFI Yassoua Alain - KYANOT Notaire Abidjan</title>
+    <meta name="description" content="Étude de Maître KOFFI Yassoua Alain, Notaire à Abidjan (Côte d'Ivoire) : Bd. V.GE - Immeuble Balance (face Solibra). Foncier, immobilier, succession, droit OHADA et actes dématérialisés." />
+    <meta property="og:title" content="Étude de Me KOFFI Yassoua Alain - KYANOT Notaire Abidjan" />
+    <meta property="og:description" content="Étude de Maître KOFFI Yassoua Alain, Notaire à Abidjan (Côte d'Ivoire) : Bd. V.GE - Immeuble Balance (face Solibra). Foncier, immobilier, succession, droit OHADA et actes dématérialisés." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

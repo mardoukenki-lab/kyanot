@@ -1,0 +1,6 @@
+{
+  "name": "KYANOT - Étude Notariale Digitale & Humaine",
+  "description": "Étude de Maître KOFFI Yassoua Alain, Notaire à Abidjan (Côte d'Ivoire) : Bd. V.GE - Immeuble Balance (face Solibra). Foncier, immobilier, succession, droit OHADA et actes dématérialisés.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
