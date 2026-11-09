@@ -46,6 +46,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDeposit, onOpenRdv }) => {
                 </a>
               </li>
               <li>
+                <a className="hover:text-white transition" href="#faq">
+                  Questions Fréquentes (FAQ)
+                </a>
+              </li>
+              <li>
                 <a className="hover:text-white transition" href="#contact">
                   Accès &amp; Contact
                 </a>

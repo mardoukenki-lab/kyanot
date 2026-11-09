@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import SplashCursor from './SplashCursor';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Vision } from './components/Vision';
 import { Expertises } from './components/Expertises';
 import { ProcessSteps } from './components/ProcessSteps';
+import { FAQ } from './components/FAQ';
 import { AccessContact } from './components/AccessContact';
 import { Footer } from './components/Footer';
 import { AppointmentModal } from './components/AppointmentModal';
@@ -53,7 +55,20 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f8f6f6] font-display text-[#221610] antialiased selection:bg-[#ec5b13] selection:text-white">
+    <div className="relative min-h-screen bg-[#f8f6f6] font-display text-[#221610] antialiased selection:bg-[#ec5b13] selection:text-white">
+      {/* SplashCursor interactif */}
+      <SplashCursor
+        rainbow
+        size={1.6}
+        force={0.8}
+        swirl={18}
+        trail={2.5}
+        clickSplash={false}
+        intensity={0.7}
+        shading={0.4}
+        contained
+      />
+
       {/* Toast Notification */}
       {toastMessage && (
         <div className="fixed bottom-6 right-6 z-50 bg-[#240f1b] text-white px-5 py-3.5 rounded-xl shadow-2xl border border-[#4b2038] flex items-center gap-3 animate-in fade-in slide-in-from-bottom-3 duration-300">
@@ -80,7 +95,13 @@ export default function App() {
         onOpenRdv={handleOpenRdv}
       />
 
-      {/* Section 4: Accès & Contact */}
+      {/* Section 4: Foire Aux Questions (FAQ) recommandée par l'audit */}
+      <FAQ
+        onOpenRdv={handleOpenRdv}
+        onOpenDeposit={() => handleOpenDeposit('immobilier')}
+      />
+
+      {/* Section 5: Accès & Contact */}
       <AccessContact onOpenRdv={handleOpenRdv} />
 
       {/* Footer */}

@@ -81,6 +81,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenRdv, onOpenDeposit }) => {
               <a className="text-white/90 hover:text-white text-sm font-medium transition py-1 hover:border-b-2 hover:border-[#ec5b13]" href="#parcours-kyanot">
                 Comment ça marche
               </a>
+              <a className="text-white/90 hover:text-white text-sm font-medium transition py-1 hover:border-b-2 hover:border-[#ec5b13]" href="#faq">
+                FAQ
+              </a>
               <a className="text-white/90 hover:text-white text-sm font-medium transition py-1 hover:border-b-2 hover:border-[#ec5b13]" href="#contact">
                 Accès &amp; Contact
               </a>
@@ -140,6 +143,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenRdv, onOpenDeposit }) => {
               </a>
               <a className="text-white text-base font-semibold py-2 border-b border-[#4b2038]" href="#parcours-kyanot" onClick={closeMobileMenu}>
                 Comment ça marche
+              </a>
+              <a className="text-white text-base font-semibold py-2 border-b border-[#4b2038]" href="#faq" onClick={closeMobileMenu}>
+                Questions Fréquentes (FAQ)
               </a>
               <a className="text-white text-base font-semibold py-2 border-b border-[#4b2038]" href="#contact" onClick={closeMobileMenu}>
                 Accès &amp; Contact

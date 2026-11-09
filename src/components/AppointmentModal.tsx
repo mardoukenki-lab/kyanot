@@ -27,10 +27,13 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
   const [notes, setNotes] = useState('');
   const [confirmedBooking, setConfirmedBooking] = useState<AppointmentData | null>(null);
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const ref = `RDV-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
     const data: AppointmentData = {
       motive,
@@ -43,8 +46,37 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
       notes,
       referenceId: ref
     };
-    setConfirmedBooking(data);
-    onBookingConfirmed(data);
+
+    const payload = {
+      type: 'Demande de Rendez-vous Notarial',
+      reference: ref,
+      motif: motive,
+      format: format === 'visio' ? 'Visioconférence certifiée (Diaspora / Hors Abidjan)' : 'À l\'Étude (Immeuble Balance, Bd. VGE)',
+      date_souhaitee: date,
+      creneau: timeSlot,
+      nom_client: fullName,
+      telephone: phone,
+      email: email,
+      remarques: notes || 'Aucune remarque',
+      date_demande: new Date().toLocaleString('fr-FR')
+    };
+
+    try {
+      await fetch('https://formspree.io/f/xgobznna', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+    } catch {
+      // Continuer le flux
+    } finally {
+      setIsSubmitting(false);
+      setConfirmedBooking(data);
+      onBookingConfirmed(data);
+    }
   };
 
   const handleDownloadIcs = () => {
@@ -252,9 +284,17 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
 
               <button
                 type="submit"
-                className="w-full py-3 bg-[#ec5b13] hover:bg-[#d94f0e] text-white rounded-xl font-bold text-sm shadow-md transition"
+                disabled={isSubmitting}
+                className="w-full py-3 bg-[#ec5b13] hover:bg-[#d94f0e] text-white rounded-xl font-bold text-sm shadow-md transition flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
               >
-                Confirmer la demande de RDV
+                {isSubmitting ? (
+                  <>
+                    <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    <span>Transmission de votre rendez-vous...</span>
+                  </>
+                ) : (
+                  <span>Confirmer la demande de RDV</span>
+                )}
               </button>
             </form>
           </>
