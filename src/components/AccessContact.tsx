@@ -138,8 +138,8 @@ export const AccessContact: React.FC<AccessContactProps> = ({ onOpenRdv }) => {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-[#221610]">Courriel</h4>
-                    <a href="mailto:contact@etudekoffi-notaire.ci" className="text-xs text-stone-700 hover:text-[#ec5b13] font-medium transition block mt-0.5">
-                      contact@etudekoffi-notaire.ci
+                    <a href="mailto:kyanot.etudedemaitrekoffi@gmail.com" className="text-xs text-stone-700 hover:text-[#ec5b13] font-medium transition block mt-0.5 break-all">
+                      kyanot.etudedemaitrekoffi@gmail.com
                     </a>
                     <span className="text-[11px] text-stone-400">
                       Réponse garantie sous 24h ouvrées
@@ -236,7 +236,7 @@ export const AccessContact: React.FC<AccessContactProps> = ({ onOpenRdv }) => {
                       <span>WhatsApp Direct (+225 07 00 00 00 00)</span>
                     </a>
                     <a
-                      href="mailto:contact@etudekoffi-notaire.ci?subject=Pièces%20justificatives%20dossier%20notarié"
+                      href="mailto:kyanot.etudedemaitrekoffi@gmail.com?subject=Pièces%20justificatives%20dossier%20notarié"
                       className="py-2 px-3 bg-stone-800 hover:bg-black text-white text-xs font-bold rounded-lg text-center transition flex items-center justify-center gap-1.5"
                     >
                       <Mail className="w-3.5 h-3.5" />

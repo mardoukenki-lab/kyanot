@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Clock, MapPin, Laptop, Menu, X, Calendar, UploadCloud } from 'lucide-react';
+import { Phone, Clock, MapPin, Laptop, Menu, X, Calendar, UploadCloud, Mail } from 'lucide-react';
 
 interface HeaderProps {
   onOpenRdv: () => void;
@@ -28,6 +28,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenRdv, onOpenDeposit }) => {
             </span>
           </div>
           <div className="flex items-center gap-4">
+            <a
+              className="hover:text-[#ec5b13] transition hidden xl:flex items-center gap-1 font-medium text-slate-200"
+              href="mailto:kyanot.etudedemaitrekoffi@gmail.com"
+            >
+              <Mail className="w-3.5 h-3.5 text-[#ec5b13]" />
+              kyanot.etudedemaitrekoffi@gmail.com
+            </a>
+            <span className="hidden xl:inline text-white/20">|</span>
             <a
               className="hover:text-[#ec5b13] transition flex items-center gap-1 font-medium text-slate-200"
               href="tel:+2252721000000"

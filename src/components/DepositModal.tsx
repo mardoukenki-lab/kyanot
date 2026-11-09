@@ -354,7 +354,7 @@ export const DepositModal: React.FC<DepositModalProps> = ({
                   <span>WhatsApp (+225 07 00 00 00 00)</span>
                 </a>
                 <a
-                  href={`mailto:contact@etudekoffi-notaire.ci?subject=${encodeURIComponent(`Pièces dossier ${createdDossier.id} - ${createdDossier.clientName}`)}`}
+                  href={`mailto:kyanot.etudedemaitrekoffi@gmail.com?subject=${encodeURIComponent(`Pièces dossier ${createdDossier.id} - ${createdDossier.clientName}`)}`}
                   className="py-2 px-3 bg-[#240f1b] hover:bg-black text-white text-xs font-bold rounded-lg text-center transition flex items-center justify-center gap-1.5"
                 >
                   <Mail className="w-3.5 h-3.5" />

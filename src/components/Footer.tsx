@@ -87,6 +87,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDeposit, onOpenRdv }) => {
                   Plan d'accès (Immeuble Balance)
                 </a>
               </li>
+              <li className="pt-1">
+                <a className="hover:text-[#ec5b13] transition text-[11px] text-slate-300 break-all" href="mailto:kyanot.etudedemaitrekoffi@gmail.com">
+                  kyanot.etudedemaitrekoffi@gmail.com
+                </a>
+              </li>
             </ul>
           </div>
 
